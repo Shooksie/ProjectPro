@@ -1,0 +1,3 @@
+[submodule "NodeMachine/libs/markdown"]
+	path = NodeMachine/libs/markdown
+	url = https://github.com/Shooksie/React-Markdown-Component

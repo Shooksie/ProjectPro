@@ -1,0 +1,9 @@
+.idea/
+base/__pycache__/
+NodeMachine/node_modules/
+.idea/codeStyles/
+*.xml
+collected_static/
+*.pyc
+NodeMachine/dist/
+dist/

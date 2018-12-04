@@ -1,0 +1,41 @@
+{
+  "name": "nodemachine",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "webpack --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLISCENSED",
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.1",
+    "node-sass": "^4.10.0",
+    "react-hot-loader": "^4.3.12",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.26.0",
+    "webpack-bundle-tracker": "^0.4.2-beta",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.11",
+    "popper.js": "^1.14.5",
+    "qs": "^6.6.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-html-parser": "^2.0.2",
+    "react-markdown-area": "^0.3.8",
+    "react-modal": "^3.6.1"
+  }
+}

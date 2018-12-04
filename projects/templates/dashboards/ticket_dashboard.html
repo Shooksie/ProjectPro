@@ -1,0 +1,21 @@
+{% extends 'teams/base.html' %}
+
+{% load render_bundle from webpack_loader %}
+
+{% block content %}
+    <div id="app">
+
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+        window.appUrls = {
+          ticket: '{% url 'projects:all' %}',
+          updateTicket: '{% url 'projects:update_ticket' %}',
+          ticketMeta: '{% url 'projects:ticket_meta' %}',
+        }
+    </script>
+    {% render_bundle 'ticketApp' %}
+{% endblock %}
+

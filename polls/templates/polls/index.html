@@ -1,0 +1,14 @@
+{% load static %}
+{% load render_bundle from webpack_loader %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+{% if latest_question_list %}
+    <ul>
+    {% render_bundle 'main' %}
+    {% for question in latest_question_list %}
+       <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
