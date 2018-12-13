@@ -1,8 +1,9 @@
+from django.contrib.auth.models import User
+from django.contrib.postgres.fields import JSONField
 from django.db import models
 from django.db.models import Model
-from django.contrib.auth.models import User
-from projects.models import Project
 
+from projects.models import Project
 from .constants import TeamRoleChoices
 
 
@@ -18,5 +19,15 @@ class TeamUsers(Model):
 
 
 class TeamProjects(Model):
+    team = models.ForeignKey(Team, null=True, blank=True, on_delete=models.DO_NOTHING)
+    projects = models.ForeignKey(Project, null=True, blank=True, on_delete=models.DO_NOTHING)
+
+
+class Roles(Model):
+    role_name = models.CharField(max_length=150)
+    role_permissions = JSONField()
+
+
+class TeamRoles(Model):
     team = models.ForeignKey(Team, null=True, blank=True, on_delete=models.DO_NOTHING)
     projects = models.ForeignKey(Project, null=True, blank=True, on_delete=models.DO_NOTHING)

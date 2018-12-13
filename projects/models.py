@@ -60,3 +60,7 @@ class FeatureTicket(Model):
     feature = models.ForeignKey(Feature, null=True, blank=True, on_delete=models.DO_NOTHING)
     ticket = models.ForeignKey(Ticket, null=True, blank=True, on_delete=models.DO_NOTHING)
 
+
+class Documentation(Model):
+    documentation = models.CharField(max_length=1000000)
+    

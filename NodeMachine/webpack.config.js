@@ -11,7 +11,9 @@ module.exports = {
     main: './src/index.js',
     app: './src/app.js',
     ticketApp: '../projects/js/ticketApp.js',
+    reactTest: '../projects/js/test_app/index.js',
     dragAndDrop: '../projects/js/dnd.js',
+    teamsApp: '../teams/js/teamsapp.js',
     markDownTest: path.resolve(__dirname, 'libs/markdown/src/testMarkdown.js')
   },
   devtool: 'inline-source-map',

@@ -1,8 +1,10 @@
-from base.api_views import APIView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Ticket
-from .forms import TicketModelForm
+
+from base.api_views import APIView
 from .constants import TicketState, TicketPriorityChoices
+from .forms import TicketModelForm
+from .models import Ticket
+
 
 class GetTickets(LoginRequiredMixin, APIView):
     """
@@ -73,3 +75,5 @@ class FetchTickeApptMetaData(LoginRequiredMixin, APIView):
         return {'ticket_states': TicketState.convert_choices_to_dict(),
                 'ticket_state_paths': TicketState.STATE_PATHS,
                 'ticket_priorities': TicketPriorityChoices.convert_choices_to_dict()}
+
+

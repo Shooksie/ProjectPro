@@ -154,3 +154,27 @@ body {
 .filter-bar {
     height: 30px;
 }
+
+.team-widget {
+    border: 1px solid black;
+    height: 600px;
+}
+
+.y-scroll-bar {
+    overflow-y: auto;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.sticky-title {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+}
+
+.section-height {
+    height: 200px;
+}

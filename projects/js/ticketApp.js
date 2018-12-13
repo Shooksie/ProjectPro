@@ -35,6 +35,7 @@ class App extends React.Component {
       ticketsDisplay: [],
       name: '',
       description: '',
+      status: '',
       priority: undefined,
       index: undefined,
       id: '',
@@ -53,6 +54,7 @@ class App extends React.Component {
     this.getDescription = this.getDescription.bind(this);
     this.setTicketMetaData = this.setTicketMetaData.bind(this);
     this.filterCallBack = this.filterCallBack.bind(this);
+    this.updateStatus = this.updateStatus.bind(this);
   }
 
 
@@ -161,7 +163,7 @@ class App extends React.Component {
           ticketsDisplay: ticketsDisplay.concat({
             name: name, description: description, status: Number(status), priority: priority
           }),
-          modalIsOpen: modalIsOpen,
+          modalIsOpen: false,
         });
 
       } else {
@@ -176,7 +178,7 @@ class App extends React.Component {
 
   createNewTicket() {
     document.body.classList.add('modal-open');
-    this.setState({name: '', description: '', priority: 1, id: undefined, modalIsOpen: true})
+    this.setState({name: '', description: '', priority: 1, status:1, id: undefined, modalIsOpen: true})
   }
 
   getTicketClass = (ticket) => {
@@ -374,14 +376,18 @@ class App extends React.Component {
     }
   }
 
+  updateStatus(event) {
+    this.setState({status: event.target.value});
+  }
+
   getStatusOptions(currentStatus) {
     console.log(this.ticketMetaData);
     const options = [(<option value={currentStatus}>{this.ticketMetaData.ticket_states[currentStatus]}</option>)]
-    this.ticketMetaData.ticket_state_paths[currentStatus].forEach((status) => {
-      console.log(this.ticketMetaData.ticket_states[status]);
+    this.ticketMetaData.ticket_state_paths[currentStatus].forEach((status, index) => {
+      console.log(status);
       options.push(
-        <option value={status}>
-          Hello
+        <option key={index} value={status}>
+          {this.ticketMetaData.ticket_states[status]}
         </option>)
     });
 
@@ -410,9 +416,9 @@ class App extends React.Component {
                 </div>
                 <div className='form-group mb-3'>
                   <label htmlFor="formGroupExampleInput">Status:</label>
-                  <select className={'form-control mb-3'}
+                  <select className={'form-control mb-3 p-2'}
                           value={this.state.priority}
-                          onChange={this.updatePriority}>
+                          onChange={this.updateStatus}>
                     {this.getStatusOptions(this.state.status)}
                   </select>
                 </div>

@@ -11,6 +11,7 @@ urlpatterns = [
     path('api/tickets/edit/', api_views.UpdateTicket.as_view(), name='update_ticket'),
     path('/', views.TestDashboard.as_view(), name=''),
     path('tickets/', views.TicketsDashboard.as_view(), name='tickets'),
+    path('react-test/', views.ReactTest.as_view(), name='tickets'),
 ]
 
 

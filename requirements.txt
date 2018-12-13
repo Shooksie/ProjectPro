@@ -5,3 +5,5 @@ django-webpack-loader
 djangorestframework
 markdown
 django-filter
+graphene[django]>=2.0
+django-graphiql

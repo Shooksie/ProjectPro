@@ -4,7 +4,7 @@ services:
   db:
     image: postgres
     volumes:
-      - ./var/lib//postgres/:/var/lib/postgresql
+      - ./database:/var/lib/postgresql
     ports:
     - "5432:5432"
 
@@ -14,6 +14,8 @@ services:
     hostname: redis
     volumes:
     - ./redis/data:/code/data
+#    networks:
+#      - newscast
 
   web:
     build: .

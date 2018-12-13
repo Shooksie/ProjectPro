@@ -27,3 +27,16 @@ class TicketsDashboard(generic.TemplateView, LoginRequiredMixin):
         })
 
         return context
+
+
+class ReactTest(generic.TemplateView, LoginRequiredMixin):
+    template_name = 'dashboards/react_test.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ReactTest, self).get_context_data(**kwargs)
+        context.update({
+            'ticket_states': TicketState.convert_choices_to_dict(),
+            'ticket_priority': TicketPriorityChoices.convert_choices_to_dict()
+        })
+
+        return context

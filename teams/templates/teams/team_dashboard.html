@@ -1,0 +1,20 @@
+{% extends 'teams/base.html' %}
+
+{% load render_bundle from webpack_loader %}
+
+{% block content %}
+    <div id="app">
+
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+        window.appUrls = {
+          teams: '{% url 'teams:all' %}',
+          updateTeam: '{% url 'teams:update' %}',
+        }
+    </script>
+    {% render_bundle 'teamsApp' %}
+{% endblock %}
+
